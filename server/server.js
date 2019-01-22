@@ -31,10 +31,9 @@ app.get('/amazon/:id', (req, res) => {
             var imageUrl = $('#landingImage').attr('data-old-hires');
             var jsonFile = {productTitle, price, rating, reviewsLink, imageUrl};
             res.send(jsonFile);
+            res.send(port);
         }, (e) => {
-            console.log('Error!');
-            return "What";
-        });
+      });
 });
 
 app.listen(port, () => {
