@@ -3,8 +3,6 @@ const bodyParser = require('body-parser');
 const rp = require('request-promise');
 const cheerio = require('cheerio');
 
-const scrape = require('./scrape/scrape')
-
 const url = 'https://www.amazon.in/dp/';
 
 var app = express();
@@ -13,7 +11,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.send('Hello world');
+  res.send('This is the Amazon API.');
 });
 
 app.get('/amazon/:id', (req, res) => {
