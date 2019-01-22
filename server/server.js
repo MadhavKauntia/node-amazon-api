@@ -12,6 +12,10 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+  res.send('Hello world');
+});
+
 app.get('/amazon/:id', (req, res) => {
     var id = req.params.id;
     const options = {
