@@ -29,9 +29,8 @@ app.get('/amazon/:id', (req, res) => {
             var rating = $('#acrPopover').attr('title');
             var reviewsLink = 'https://www.amazon.in' + $('#acrCustomerReviewLink').attr('href');
             var imageUrl = $('#landingImage').attr('data-old-hires');
-            var jsonFile = {productTitle, price, rating, reviewsLink, imageUrl};
+            var jsonFile = {productTitle, price, rating, reviewsLink, imageUrl, port};
             res.send(jsonFile);
-            res.send(port);
         }, (e) => {
       });
 });
