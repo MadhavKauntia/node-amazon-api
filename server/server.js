@@ -26,9 +26,9 @@ app.get('/amazon/:id', (req, res) => {
         .then(($) => {
             var productTitle = $('#productTitle').text().replace(/\n/gm, "").trim();
             var price = $('#priceblock_dealprice').text().replace(/\n/gm, "").trim();
-            var rating = $('#acrPopover').attr('title');
-            var reviewsLink = 'https://www.amazon.in' + $('#acrCustomerReviewLink').attr('href');
-            var imageUrl = $('#landingImage').attr('data-old-hires');
+            var rating = $('#acrPopover').attr('title').replace(/\n/gm, "").trim();
+            var reviewsLink = 'https://www.amazon.in' + $('#acrCustomerReviewLink').attr('href').replace(/\n/gm, "").trim();
+            var imageUrl = $('#landingImage').attr('data-old-hires').replace(/\n/gm, "").trim();
             var jsonFile = {productTitle, price, rating, reviewsLink, imageUrl, port};
             res.send(jsonFile);
         }, (e) => {
